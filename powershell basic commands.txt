@@ -1,0 +1,15 @@
+$PSVersionTable - to get the current version of powershell
+$PSVersionTable.PSVersion - to filter only the version from the command
+$PSVersionTable.PSVersion.Build - to filter only build from the output of previous command
+$PSVersionTable | Get-Member - to get all the methods and variables listed in the psversion command
+$PSVersionTable.GetType() - to get the class to which this command actually belongs
+$Host or Get-Host - to get all host properties
+Get-Command -Name "*service*" - to get all the commands which has service in its name
+Get-Command -Name "*process*" - to get all the commands which has process in its name
+Get-Help Get-Service -online - get full help online for the get service command
+Get-Help Get-Service -ShowWindow - to get entire help in a new window
+Update-Help - to update the help to latest editions
+Get-help *about* - To get the list of topics
+Get-Help about_For -ShowWindow - pick a topic you are interested in and you can access detailed help about it
+Get-Alias - to get the aliases of the original powershell commands
+Set-Alias -Name cmd_list -Value Get-Command - to create own alias where Get-Command can be called using cmd_list  
