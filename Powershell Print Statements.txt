@@ -1,0 +1,18 @@
+Write-Host "This is a message"
+
+To customise the colors of the output
+
+Write-Host "This is a message" -ForegroundColor Red -BackgroundColor Yellow
+To print variable value
+
+$var = 1000
+Write-Host "variable is $var" -ForegroundColor Red -BackgroundColor Yellow
+
+To write output directly to a file
+
+Write-Output "Hello I am from powershell world" >> filename.txt
+
+$varname = Write-Output "Hello i am write output"
+
+So Write-Output can only be stored in a variable but not Write-Host
+However Write-Host provides the background color and foreground color features.

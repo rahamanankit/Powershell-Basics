@@ -1,0 +1,27 @@
+$variable_name = "Hi I Am a string"
+$variable_name
+$variable_name = 1000
+
+Another way of creating variable
+
+New-Variable -name "variable_name" "Value of the variable"
+$variable_name
+
+To see all functions associated with this variable
+
+$variable_name | Get-Member
+
+To see the data type of the variable
+
+$variable_name.GetType()
+
+To declare constants
+
+Set-Variable test_variable -option ReadOnly -value 1000 - This set the variable test_variable as a constant with a value of 1000 which cannot be change anymore.
+Set_Variable test_variable1 -option Constant -value 2000 - This also does the same thing
+'
+But the difference between both is:
+
+When a variable is ReadOnly, the variable can be removed. This does, however, require the use of the -Force parameter. Consider that a safety net. The difference here, is that when a variable is a Constant, it cannot be removed, even with the use of the -Force parameter.
+
+

@@ -1,0 +1,15 @@
+$help_statement = "Get-CommandStatement"
+try
+{
+Get-Help $help_statement -ErrorAction Stop
+}
+catch
+{
+$Error_message = $_.Exception.Message
+$Error_message
+Write-Host "Sorry the help statement $help_command doesn't exist in the command list" -ForegroundColor Blue -BackgroundColor Red
+}
+finally
+{
+#to be executed irrespective of exception
+}

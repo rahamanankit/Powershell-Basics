@@ -1,0 +1,26 @@
+Comparison Operators
+
+-eq - equals to
+-ne - not eqals
+-gt - greater than
+-ge - greater than or equal
+-lt - less than
+-le - less than or equal
+-like,-match and -contains are other comparison operators
+Example:
+"Powershell" -like "*shell" - True
+"Powershell" -notlike "*shell" - False
+"Sunday" -match "sun" - True
+"Sunday" -notmatch "sun" - False
+
+If and Else Statements
+$x = 5
+$y = 10
+If($x -gt $y)
+{
+Write-Output "$x is greater than $y"
+}
+Else
+{
+Write-Output "$x is less than $y"
+}
