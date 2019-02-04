@@ -1,0 +1,23 @@
+WAP to print strings starting with A
+
+$array = @("Animal", "Ape","balloon","Man","Sky","Microsoft","Apple")
+for($word = 0;$word -lt $array.Length;$word++)
+{
+if($array[$word] -like "A*" -or $array[$word] -like "a*")
+{
+Write-Output "Words are :" $array[$word]
+}
+}
+
+WAP to print odd and even numbers in a range
+
+for($number = 1; $number -le 100;$number++){
+if($number % 2 -eq 0)
+{
+Write-Host $number "is even"
+}
+else
+{
+Write-Host $number "is odd"
+}
+}
