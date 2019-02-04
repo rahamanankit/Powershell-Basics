@@ -1,0 +1,69 @@
+While Loop
+
+$i = 1
+while($i -le 10)
+{
+Write-Output "Value of variable i:" $i
+$i += 1
+}
+
+Do Until loop
+
+$i = 7;
+do {
+$i;
+$i += 7;
+} until ($i -gt 70)
+
+For Loop
+
+for($i = 0; $i -le 10;$i++)
+{
+Write-Host "Value of i is: " $i
+}
+
+Foreach loop
+
+$student_names = @("Student1","Student2","Student3);
+foreach($names in $student_names)
+{
+echo "Hello $names"
+}
+
+WAP to perform linear search using for,foreach and while loop
+
+Write-Host "Using For Loop" -ForegroundColor Cyan
+
+$arr_numbers = 10,20,30,40,50,60,180
+$to_find = 180;
+for($i = 0;$i -lt $arr_numbers.Length;$i++)
+{
+if($arr_numbers[$i] -eq $to_find)
+{
+Write-Host "The number " $to_find "is found" -ForegroundColor Green
+}
+}
+
+Write-Host "Using For Each loop" -ForegroundColor Yellow
+$arr_numbers = 10,20,30,40,50,60,180
+$to_find = 180;
+foreach($number in $arr_numbers)
+{
+if($number -eq $to_find)
+{
+Write-Host "The number " $to_find "is found" -ForegroundColor Green
+}
+}
+
+Write-Host "Using While loop" -ForegroundColor Magenta
+$arr_numbers = 10,20,30,40,50,60,180
+$to_find = 180;
+$number = 0
+while($number -lt $arr_numbers.Length)
+{
+if($arr_numbers[$number] -eq $to_find)
+{
+Write-Host "The number " $to_find "is found" -ForegroundColor Green
+}
+$number+=1;
+}
