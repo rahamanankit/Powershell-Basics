@@ -1,0 +1,12 @@
+To read a xml file
+
+[xml]$xml_content = Get-Content Path\file.xml
+$xml_content.GetType() - system.xml.xmldocument
+$xml_content.GetElementsByTagName("DIR_RETENTION") - there is a tag name DIR_RETENTION
+
+foreach($entity in $xml_content.GetElementsByTagName("DIR_RETENTION")){
+$var_dir = $entity.DIR - as DIR_RETENTION has another tag named DIR inside it
+$var_retention = $entity.RETENTION - as DIR_RETENTION has another tag named RETENTION inside it 
+$var_dir
+$var_retention
+}

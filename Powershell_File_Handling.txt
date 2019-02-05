@@ -1,0 +1,31 @@
+Check File existence
+
+Test-Path <Path of File> - gives true if exists
+
+if(Test-Path C:\Powershell\test_file\A_random_file.txt){
+Write-Output "File Exist"
+}else{
+Write-Output "File do not exist"
+
+To read a file
+
+Get-Content <Path> -Tail 3 - to read only the last 3 lines
+(Get-Content <Path>)[3] - to read 3rd line
+(Get-Content <Path>)[3..7] - to read line 3 to 7
+
+To store the file output in a variable
+$content = (Get-Content <Path>)[3..7] 
+$content
+
+Sample script to check file existence
+
+if(Test-Path D:\Powershell_File_Handling.txt)
+{
+Write-Host "File exists" -ForegroundColor Green
+Write-Host "Fetching the current content of the file" -ForegroundColor Green
+$content = (Get-Content D:\Powershell_File_Handling.txt)
+$content
+}else
+{
+Write-Host "File does not exist. Check if it is deleted accidentally." -ForegroundColor Red
+}
