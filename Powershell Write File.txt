@@ -1,0 +1,64 @@
+Write-Output "Hi.I am testing a filr" | Out-File <path>/output.txt OR echo "Hi.I am testing a filr" ><path>/output.txt
+
+To append
+Write-Output "Hi.I am testing a filr with new line" | Out-File <path>/output.txt -Append OR echo "Hi.I am testing a filr" >> <path>/output.txt
+ 
+Assignment
+
+We have a folder in which lot of files are there. For each of the employee in the company there is a file like below
+
+ 
+
+Name_employeeID_Date-of-joining.{employee_type}
+
+ Vijay_123123_2011-09-09.emp
+
+Sneha_1221023_2011-09-09.contractor
+
+ 
+
+You can get information like name, employee ID and date of joining and employee type from it.
+
+ 
+
+Please help your HR team by making a report of employees who are eligible for special increment(raise/hike):
+
+condition 1: Are employees and not contractors of the organization(confirm by file extension)
+
+condition 2: Serving the organization from at least 5 years.
+
+ 
+
+Report Format:
+
+CSV File: employee_eligibility_status.csv
+
+Name, EmployeeID, Eligibility
+
+Vijay, 123123,  Yes
+
+Another Person, 123212, No
+
+$file_names = Get-ChildItem "D:\testfolder\testfolder" -Name
+$output_file = "D:\employee_eligibility_status.csv"
+Write-Output "Name,EmployeeID,Eligibility Status" | Out-File $output_file
+foreach($files in $file_names){
+[string]$names = $files
+$names
+$file_type = [string]$names.Substring($names.IndexOf(".")+1)
+$splitted_name = [string]$names.Substring(0,$names.IndexOf(".")) -split("_")
+$name_of_person = $splitted_name[0]
+$employee_id = $splitted_name[1]
+$date = $splitted_name[2]
+$DOJ=[datetime]::ParseExact($date, "yyyy-mm-dd", $null)
+if($file_type -eq "emp" -and $DOJ -le (Get-Date).AddYears(-5)){
+Write-Output "$name_of_person,$employee_id,Yes" | Out-File $output_file -Append
+} else {
+    Write-Output "$name_of_person,$employee_id,No" | Out-File $output_file -Append
+}
+}
+
+
+
+
+}
