@@ -1,0 +1,7 @@
+Get-Service
+Get-Service | Sort-Object status
+Get-Service -Name "*ser*" | Sort-Object name
+
+Get-Service -Name "a*" | 
+	Where-Object {$_.Status -eq 'running'} | 
+		Select-Object -First 3

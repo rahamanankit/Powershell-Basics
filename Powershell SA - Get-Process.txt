@@ -1,0 +1,9 @@
+(Get-Process).GetType() - an object
+Get-Process | Sort-Object cpu - sort output by cpu usage
+Get-Process | Sort-Object cpu | Select-Object -First 10 - to get first 10 processes
+Get-Process -Name "*powershell*"
+Get-Process -Name "*powershell*" |select * - to see all the columns for the processes
+Get-Process | Where-Object {$_.cpu -gt 1000} - get all processes where cpu usage greater than 1000
+Get-Process | Where-Object {$_.cpu -gt 1000} | Out-File "filename" - to print and save it in a txt file
+Get-Process -Name "*powershell*" | Stop-Process - kill the process
+Get-Process | Where-Object {$_.CPU -gt 1000} | Sort-Object cpu -Descending | Out-File "D:\Get-Process Assignment.txt" - get all the processes where cpu usage greater than 1000 and then arrange it in descending order

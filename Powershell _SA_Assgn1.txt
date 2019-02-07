@@ -1,0 +1,30 @@
+Write a PowerShell statements to:
+
+Find top 10 processes which are consuming Highest CPU
+
+
+
+Write a PowerShell statements to:
+
+Find 10 processes which are consuming Lowest PM(Physical Memory)
+
+Write a PowerShell statements to:
+
+List all services which starts with letter "A" and are in Running status
+
+Write a PowerShell statements to:
+
+list down all processes whose name is svchost and consumin CPU higher then 1000 seconds
+
+Get all the services whose name starts with "a" and whose status is running into a html File. Only name and service status should be displayed in html file
+
+
+
+Get the list of all process whose Handle Count is greater than 500 into a CSV file.
+
+Get-Process | Sort-Object cpu -Descending | Select-Object -First 10
+Get-Process | Sort-Object PM | Select-Object -First 10
+Get-Service -Name "a*" | Where-Object { $_.Status -eq 'Running' } 
+Get-Process -Name svchost | Where-Object { $_.CPU -gt 1000 }
+Get-Service -Name "a*" | Where-Object { $_.Status -eq 'Running' } | ConvertTo-Html -Property Name,Status | Out-File "D:\service_status.html"
+Get-Process | Where-Object {$_.HandleCount -gt 500 } | ConvertTo-Csv | Out-File "D:\process_csv.csv"
