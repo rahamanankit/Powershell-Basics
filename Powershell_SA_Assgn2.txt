@@ -1,0 +1,18 @@
+Requirement:
+
+Write a PowerShell script to stop a service and check if there is any process alive(master or child process) for that service. If process is alive, kill the process and report in logfile  and then only start the service.
+
+
+Service Name: Tomcat
+Main Process: tomcat.exe
+Child Process(only for example sake): tomcat1,tomcat2 .. tomcatN
+
+Get-Service -Name 'Tomcat' | Stop-Service
+$process = Get-Process -Name 'tomcat*' 
+$count = $process.Count
+if($count -gt 0){
+Write-Output "$(Get-Date) Killing the processes" |Out-File D:\start_stop_process.txt 
+$process | Stop-Process
+}
+Write-Output "$(Get-Date) Starting the processes now" |Out-File D:\start_stop_process.txt -Append
+Start-Service -Name 'Tomcat' | Start-Service
