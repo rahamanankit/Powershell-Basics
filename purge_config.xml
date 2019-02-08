@@ -1,0 +1,11 @@
+<PURGE>
+		<DIR_RETENTION>
+			<DIR>C:\PowerShell\Automation1_Purge_final\TestFolders1</DIR>
+			<RETENTION>28</RETENTION>
+		</DIR_RETENTION>
+		<DIR_RETENTION>
+			<DIR>C:\PowerShell\Automation1_Purge_final\TestFolders2</DIR>
+			<RETENTION>17</RETENTION>
+		</DIR_RETENTION>
+
+</PURGE>
