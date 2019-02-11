@@ -1,15 +1,3 @@
-#   Script Name : Automation1_Purge.ps1
-#
-#  	Developed By : Vijay Saini
-#  	Scripting Language : PowerShell
-#
-#   Date : 14th January 2018
-#
-#   Purpose : To perform the purge operation on files older than 28 days and keep a track of files which are getting deleted
-#   Author  :  Vijay Saini
-#
-#              
-
 #Setting up variables
 $BASE_DIR=(Resolve-Path .\).Path
 $ddMMyyyy=(Get-Date).ToString('dd-MM-yyyy');
